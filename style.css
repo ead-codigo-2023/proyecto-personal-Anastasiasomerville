@@ -1,0 +1,31 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+    margin-bottom: 100px; /* Ajusta el margen inferior según sea necesario */
+}
+/* Estilos adicionales para las imágenes pequeñas */
+.small-image {
+    width: 80px; /* Ajusta el ancho según sea necesario */
+    display: inline-block; /* Coloca las imágenes en línea */
+    margin-right: 10px; /* Ajusta el margen derecho según sea necesario */
+}
+<style>
+    /* ... Tus estilos existentes ... */
+
+    body {
+        margin-bottom: 100px; /* Ajusta el margen inferior para dejar espacio para el footer */
+    }
+
+    img {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+    }
+
+    .center-content {
+        text-align: center;
+    }
+</style>
+

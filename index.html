@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700" />
+    <title>La Tribu Ink</title>
+    <style>
+        /* Estilos existentes... */
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fff; /* Fondo blanco */
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            background-color: #fff; /* Fondo blanco */
+            color: #000; /* Texto negro */
+            padding: 10px;
+        }
+
+        #nav {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #nav li {
+            margin-right: 20px;
+        }
+
+        #nav a {
+            text-decoration: none;
+            color: #000; /* Texto negro */
+        }
+
+        #header-image {
+            width: 100%;
+            max-width: 100%;
+            height: auto;
+        }
+
+        #reserva-box {
+            text-align: center;
+            margin: 20px;
+            border-radius: 10px;
+        }
+
+        #reserva-button,
+        #contact-form button {
+            background-color: #000; /* Fondo negro */
+            color: #fff; /* Texto blanco */
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Nueva página de contacto y artista */
+        .page {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        #contact-form,
+        #artist-description,
+        #cuidados-page {
+            margin: 20px; /* Ajusta el margen según sea necesario */
+            text-align: left;
+            background-color: #fff; /* Fondo blanco */
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        #contact-form label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        #contact-form input,
+        #contact-form textarea {
+            width: calc(100% - 16px);
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        #artist-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        #about {
+            margin: 50px; /* Ajusta el margen según sea necesario */
+        }
+
+        /* Estilos adicionales para la nueva sección de política y antes de reservar */
+        .dropdown-btn,
+        .dropdown-content {
+            display: block;
+            text-align: left;
+        }
+
+        .dropdown-content p {
+            margin: 10px 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        .time-section img {
+            width: 80px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1 style="text-align: center;">La Tribu Ink</h1>
+        <nav>
+            <ul id="nav">
+                <li><a href="#" onclick="showPage('about')">Home</a></li>
+                <li><a href="#" onclick="showPage('contact-page')">Contacto</a></li>
+                <li><a href="#" onclick="showPage('artist-page')">Artista</a></li>
+                <li><a href="#" onclick="showPage('reserva-page')">Información de reserva</a></li>
+                <li><a href="#" onclick="showPage('cuidados-page')">Cuidados Post Sesión</a></li>
+            </ul>
+        </nav>
+        
+    </header>
+    <img id="header-image" src="imagen.JPG" alt="Imagen de encabezado">
+    <div id="reserva-box">
+        <button id="reserva-button">Reserva ahora</button>
+    </div>
+    <div id="about">
+        La Tribu Ink es un estudio de tatuajes excepcional que se dedica a la creación de tatuajes de línea fina con un
+        estilo minimalista inigualable. Nuestra pasión radica en la delicadeza y la fineza de cada trazo, lo que convierte
+        cada tatuaje en una verdadera obra de arte en la piel de nuestros clientes.
+
+        En La Tribu Ink, creemos que un tatuaje es mucho más que un simple dibujo en la piel; es una manifestación de la
+        individualidad y la creatividad de cada persona. Por eso, nos esforzamos en ofrecer un servicio altamente
+        personalizado, donde cada diseño es cuidadosamente adaptado a los gustos y preferencias de nuestros clientes.
+    </div>
+
+    <!-- Nueva página de contacto -->
+    <div id="contact-page" class="page">
+        <div id="contact-form">
+            <form action="#" method="post">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" name="telefono">
+
+                <label for="comentario">Comentario:</label>
+                <textarea id="comentario" name="comentario" rows="4" required></textarea>
+
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Nueva página de artista -->
+    <div id="artist-page" class="page">
+        <div id="artist-description">
+            <h3>Anastasia Somerville</h3>
+            <p>Anastasia Somerville es la fundadora de La Tribu Ink y ha estado tatuando durante 3 años. Es especialista en
+                tatuajes de línea fina y se destaca por trabajar con tinta negra y roja. Además de ser tatuadora, Anastasia
+                es diseñadora, lo que le permite crear tatuajes únicos para cada cliente, basados en sus ideas y
+                convirtiéndolos en diseños especiales y exclusivos.</p>
+        </div>
+        <!-- Eliminada la imagen de la página de artista -->
+    </div>
+
+    <!-- Nueva página de reserva -->
+    <div id="reserva-page" class="page" style="text-align: center;">
+        <h2>Política</h2>
+
+        <div id="dropdown1" class="dropdown-content">
+            <p>Envíe un correo electrónico a <a href="mailto:contacto@latribuink.cl">contacto@latribuink.cl</a> dentro de los dos meses posteriores a su cita inicial y programaremos una cita para que venga a realizarse un retoque si la artista lo considera necesario. Por favor, escriba en el asunto de su correo electrónico 'SOLICITUD DE RETOQUE' y adjunte una imagen del tatuaje completamente curado (14 días después de la cita).</p>
+
+            <p>Los tatuajes fineline no tienen valor adicional por el retoque. Los tatuajes de líneas finas curan un color gris oscuro en lugar de un negro intenso. Si no le gusta este aspecto, solicite un tamaño de aguja mayor.</p>
+
+            <p>Los tatuajes de manos, pies, cuello y oreja no tienen garantía por el retoque. La piel en estas zonas, no retiene la tinta tan bien como lo haría la piel de otras zonas del cuerpo. Por este motivo, tienen un 90% más de probabilidades de requerir un retoque.</p>
+
+            <p>Si un tatuaje se va a caer, lo hará durante los primeros 14 días (el proceso de curación). Si la tinta ha permanecido más allá de este punto, cualquier otro cambio en el tatuaje se debe al envejecimiento natural de la piel. Por este motivo, le solicitamos que se ponga en contacto con nosotros DENTRO DE LOS DOS MESES posteriores a su cita para solicitar un retoque.</p>
+        </div>
+
+        <h2>Antes de Reservar</h2>
+        <ul>
+            <li>Debes ser puntual a la hora acordada, luego de 20 minutos de atraso se pierde la hora, por lo que también se pierde el abono.</li>
+            <li>Venir hidratado. Para un buen resultado, es clave mantener la zona a tatuar hidratada.</li>
+            <li>Tomar agua y venir alimentado.</li>
+            <li>No tomar alcohol el día previo a la sesión.</li>
+            <li>Si eres menor de edad, debes venir acompañado de apoderado.</li>
+            <li>Si deseas cambiar la fecha acordada para realizar la sesión de tatuaje, debes comunicarte con tu tatuador con 72 hrs de anticipación (dentro de días hábiles). Se puede reagendar una sola vez.</li>
+            <li>El abono no es reembolsable en caso de cancelar la cita, por lo que debes estar seguro a la hora de agendar.</li>
+        </ul>
+
+        <h2>Tiempos por Sesión</h2>
+        <p>Cada período de tiempo incluye el tiempo para que el artista finalice su diseño, plantilla, configuración, etc. El período de tiempo no es solo el tiempo del tatuaje.</p>
+
+        <h3>30 minutos</h3>
+        <ul>
+            <li>Diseño simple que no mide más de 4 cm x 4 cm.</li>
+            <li>Guión de una sola palabra (lettering).</li>
+            <li>La cursiva suele ser más rápida de tatuar que las fuentes en bloque.</li>
+        </ul>
+        <!-- Agrega aquí las imágenes para la sección de 30 minutos -->
+        <div class="time-section">
+            <img src="Tatuajes/Tatuaje 1.jpg" alt="Imagen 1">
+            <img src="Tatuajes/Tatuaje 2.jpg" alt="Imagen 2">
+            <img src="Tatuajes/Tatuaje 3.jpg" alt="Imagen 3">
+        </div>
+
+        <h3>1 hora</h3>
+        <ul>
+            <li>Especificaciones para la sesión de 1 hora.</li>
+            <!-- Agrega los elementos específicos para la sesión de 1 hora -->
+        </ul>
+        <!-- Agrega aquí las imágenes para la sección de 1 hora -->
+        <div class="time-section">
+            <img src="Tatuajes/Tatuaje 4.jpg" alt="Imagen 1">
+            <img src="Tatuajes/Tatuaje 5.jpg" alt="Imagen 2">
+            <img src="Tatuajes/Tatuaje 6.jpg" alt="Imagen 3">
+        </div>
+
+        <h3>2 horas</h3>
+        <ul>
+            <li>Especificaciones para la sesión de 2 horas.</li>
+            <!-- Agrega los elementos específicos para la sesión de 2 horas -->
+        </ul>
+        <!-- Agrega aquí las imágenes para la sección de 2 horas -->
+        <div class="time-section">
+            <img src="Tatuajes/Tatuaje 7.jpg" alt="Imagen 1">
+            <img src="Tatuajes/Tatuaje 8.jpg" alt="Imagen 2">
+            <img src="Tatuajes/Tatuaje 9.jpg" alt="Imagen 3">
+        </div>
+        <!-- Agrega la imagen del footer -->
+        <img src="footer.png" alt="Footer" style="width: 0%; max-width: 1200px; margin: 0 auto; display: block;">
+    </div>
+
+   <!-- Nueva página de Cuidados post sesión -->
+<div id="cuidados-page" class="page center-content">
+    <h2>Cuidados Post Tatuaje</h2>
+        <p>1. Dejar parche entre 12 y 24 hrs.</p>
+        <p>2. Con las manos muy limpias, quitar el parche y limpiar la zona tatuada con agua y jabón neutro.</p>
+        <p>3. Secar zona con toalla nova a toquesitos (sin frotar).</p>
+        <p>4. Aplicar crema recomendada por el tatuador - Aquaphor/Crema cicaplast Baume 5- debe ser una capa muy fina y bien esparcida.</p>
+        <p>5. Repetir el lavado (agua + jabón neutro) y crema cicatrizante 3 veces al día por 2 semanas.</p>
+        <p>6. Desde la tercera semana en adelante, comenzar a usar bloqueador con filtro uva.</p>
+
+        <h3>¿QUÉ NO DEBO HACER?</h3>
+        <ul>
+            <li>No sumergir tu tatuaje en aguas comunes (piscina, mar, lago, etc.) por dos semanas.</li>
+            <li>No hacer deporte durante la primera semana.</li>
+        <li>No beber alcohol destilado por dos días.</li>
+        <li>No dejar que el tatuaje esté en contacto con mascotas (pueden tirar pelos a la zona tatuada).</li>
+    </ul>
+
+    <p>Los cuidados posteriores son esenciales para una buena cicatrización del tatuaje.</p>
+    <p>Si se requiere repaso del tatuaje, se realiza sin costo adicional durante los primeros dos meses.</p>
+    <p>Las variaciones de tono en el tatuaje pueden variar de acuerdo al color de piel.</p>
+    <p>No se incluye garantía de repaso cuando los tatuajes son en la mano, pie, cuello y oreja.</p>
+
+    <p>Cualquier duda, contactar a La Tribu Ink por Instagram! Estaremos atentos a sus comentarios, consultas o dudas.</p>
+</div>
+</div>
+         <!-- Contenido existente... -->
+
+         <img src="footer.png" alt="Footer" style="width: 100%; max-width: 100vw; margin: 0; display: block;">
+        </div>
+    
+        <script>
+            function showPage(pageId) {
+                // Ocultar todas las páginas
+                var pages = document.getElementsByClassName('page');
+                for (var i = 0; i < pages.length; i++) {
+                    pages[i].style.display = 'none';
+                }
+    
+                // Mostrar la página seleccionada
+                var selectedPage = document.getElementById(pageId);
+                if (selectedPage) {
+                    selectedPage.style.display = 'block';
+                }
+    
+                // Ocultar la sección de imagen y texto en la página de contacto y del artista
+                var aboutSection = document.getElementById('about');
+                if (pageId !== 'about' && aboutSection) {
+                    aboutSection.style.display = 'none';
+                }
+    
+                // Ocultar la imagen en las páginas de contacto y artista
+                var headerImage = document.getElementById('header-image');
+                if (pageId !== 'about' && headerImage) {
+                    headerImage.style.display = 'none';
+                }
+            }
+        </script>
+    
+    </body>
+    
+    </html>
